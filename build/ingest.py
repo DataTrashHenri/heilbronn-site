@@ -32,9 +32,8 @@ CURATED = ROOT / "data" / "curated"
 CANONICAL = ROOT / "data" / "canonical"
 
 VARIANTS = ("square", "triangle", "convex")
-# Per-variant n range: the square table runs to 36 (AlphaEvolve submission),
-# the other two stop at 35.
-N_MAX = {"square": 36, "triangle": 35, "convex": 35}
+# Per-variant n range; all three tables currently run to 36.
+N_MAX = {"square": 36, "triangle": 36, "convex": 36}
 
 
 def ns(variant):
