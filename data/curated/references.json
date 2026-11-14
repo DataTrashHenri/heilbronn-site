@@ -168,6 +168,11 @@
    "kind": "web",
    "url": "https://github.com/NERD-NEH007/heilbronn-discovery-lab",
    "title": "E. Hendren, A computer-assisted proof that the known nine-point Heilbronn configuration in the unit square is optimal (November 2026), github.com/NERD-NEH007/heilbronn-discovery-lab"
+  },
+  "hendren-2026-triangle8": {
+   "kind": "web",
+   "url": "https://github.com/NERD-NEH007/heilbronn-discovery-lab/releases/tag/v1.1-tri8",
+   "title": "E. Hendren, A computer-assisted proof of optimality for Heilbronn's problem with eight points in a triangle (November 2026), github.com/NERD-NEH007/heilbronn-discovery-lab"
   }
  },
  "by_config": {
@@ -224,6 +229,7 @@
   ],
   "triangle/8": [
    "sudermann-merx-2026-triangle",
+   "hendren-2026-triangle8",
    "chen-zeng-zhou-2014"
   ],
   "triangle/11": [
