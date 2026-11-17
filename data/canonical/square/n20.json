@@ -89,6 +89,7 @@
   "decimal": "0.0129381967147270176121146278205",
   "fraction": "25876393429454035224229255641/2000000000000000000000000000000",
   "exact_text": null,
+  "exact_sympy": null,
   "minimal_polynomial": null
  },
  "status": "record",
