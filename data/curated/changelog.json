@@ -163,6 +163,10 @@
   {
    "date": "2026-08-22",
    "text": "coordinates identified as exact rationals on a 1/56 grid (value exactly 43/784); replaces the reconstruction (this site)"
+  },
+  {
+   "date": "2026-11-15",
+   "text": "computer-assisted proof of optimality posted by Ethan Hendren: a minimum-enclosing-triangle normalization to eight contact families, an exact cell-graph search and exactly checked LP certificates, with a certified local basin, show the value 43/784 with the known configuration unique up to symmetry; AI-assisted and not yet independently verified"
   }
  ],
  "convex/5": [
@@ -187,6 +191,10 @@
   {
    "date": "2026-11",
    "text": "status changed from proven to numerically optimal: the certificate (arXiv:2607.15021) is a Gurobi run with a 10⁻⁴ relative MIP gap in floating point, and the exact optimum (the septic root) remains a conjecture of Chen, Zeng and Zhou"
+  },
+  {
+   "date": "2026-11-14",
+   "text": "computer-assisted proof of optimality posted by Ethan Hendren: an exact-arithmetic branch and bound over the whole configuration space (LP bounds verified in exact integer arithmetic, neighbourhood of the optimum closed by an interval-arithmetic certificate) shows that the value is twice the unique real root of the septic, with the known configuration unique up to symmetry; AI-assisted and not yet independently verified, so the entry stays numerically optimal"
   }
  ],
  "convex/8": [
@@ -335,6 +343,10 @@
   {
    "date": "2026-11",
    "text": "status changed from proven to numerically optimal: the solver certificate (arXiv:2603.11107) holds within floating-point tolerances, and the paper states that no rigorous optimality proof is known"
+  },
+  {
+   "date": "2026-11-13",
+   "text": "computer-assisted proof of optimality posted by Ethan Hendren: an exact-arithmetic branch and bound (LP bounds verified in exact integer arithmetic, neighbourhood of the optimum closed by an interval-arithmetic certificate) shows H(9) = (9√65 − 55)/320 with the Comellas–Yebra configuration unique up to symmetry; AI-assisted and not yet independently verified, so the entry stays numerically optimal"
   }
  ]
 }
