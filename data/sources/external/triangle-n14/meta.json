@@ -1,1 +1,5 @@
-{"ref": "Discovery lab computational search. Paper, data and certificates: https://github.com/NERD-NEH007/heilbronn-discovery-lab", "credit": "Configuration: David Cantrell, June 2007 (original basin credit). Exact refinement to the local maximum: Ethan Hendren, November 2026", "note": "Exact refinement of the canonical configuration to its local maximum (certified unique solution of its tie system); coordinates truncated toward zero to 30 decimals."}
+{
+ "ref": "David Cantrell's original coordinates (Mathematica list), received September 2026",
+ "credit": "David Cantrell, June 2007",
+ "note": "Original author's arrangement for the entry, previously shown only as a reconstruction; Cantrell's literals converge to the same configuration under local polishing. Coordinates refined by Ethan Hendren, November 2026: exact refinement to the local maximum, the certified unique solution of the tie system (+2.9e-16); github.com/NERD-NEH007/heilbronn-discovery-lab."
+}
