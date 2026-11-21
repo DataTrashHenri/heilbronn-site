@@ -1,0 +1,5 @@
+{
+ "ref": "Discovery lab computational search. Paper, data and certificates: https://github.com/NERD-NEH007/heilbronn-discovery-lab",
+ "credit": "Ethan Hendren, November 2026",
+ "note": "The n = 67 entry with point 20 removed. Deleting that point shrinks the hull less than it helps the smallest triangle, so this beats the configuration first submitted for n = 66."
+}
