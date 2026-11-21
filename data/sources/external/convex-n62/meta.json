@@ -1,1 +1,5 @@
-{"ref": "Discovery lab computational search. Paper, data and certificates: https://github.com/NERD-NEH007/heilbronn-discovery-lab", "credit": "Ethan Hendren, November 2026", "note": "Computational search (discovery lab); coordinates are the refined optimum, translated to non-negative coordinates and truncated toward zero to 30 decimals."}
+{
+ "ref": "Discovery lab computational search. Paper, data and certificates: https://github.com/NERD-NEH007/heilbronn-discovery-lab",
+ "credit": "Ethan Hendren, November 2026",
+ "note": "The n = 63 entry with point 62 removed. Deleting that point shrinks the hull less than it helps the smallest triangle, so this beats the configuration first submitted for n = 62."
+}
