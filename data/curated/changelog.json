@@ -170,7 +170,7 @@
   },
   {
    "date": "2026-11-18",
-   "text": "optimality proof completed with a replayable certificate trace (Ethan Hendren): every split and closure of the exact search, 3,854 shards and 69,194,387 closures, is replayed in exact arithmetic by a separate checker that does not use the search code; the trace, checker and strict eight-family release receipt are archived on Zenodo; AI-assisted"
+   "text": "optimality proof completed with a replayable certificate trace (Ethan Hendren): every split and closure of the exact search, 3,854 shards and 69,194,387 closures, is replayed in exact arithmetic by a separate checker that does not use the search code; the trace, checker and strict eight-family release receipt are archived on Zenodo; AI-assisted, and so far replayed only by its author"
   }
  ],
  "convex/5": [
@@ -202,7 +202,7 @@
   },
   {
    "date": "2026-11-18",
-   "text": "optimality proof with a replayable certificate trace (Ethan Hendren): a second, independent proof by the cell-graph method records every split and closure, 2,950 shards and 4,379,630 closures, replayed in exact arithmetic by a separate checker that does not use the search code (it also re-checks the local certificate: Newton-Kantorovich existence and the first-order basin); trace, checker and release receipt archived on Zenodo; AI-assisted"
+   "text": "optimality proof with a replayable certificate trace (Ethan Hendren): a second, independent proof by the cell-graph method records every split and closure, 2,950 shards and 4,379,630 closures, replayed in exact arithmetic by a separate checker that does not use the search code (it also re-checks the local certificate: Newton-Kantorovich existence and the first-order basin); trace, checker and release receipt archived on Zenodo; AI-assisted, and so far replayed only by its author"
   }
  ],
  "convex/8": [
