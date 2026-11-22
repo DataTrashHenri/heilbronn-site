@@ -53,13 +53,16 @@
   "exact_decimal": "0.0677892132541972123588108049740286304958007014",
   "poly_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>1216512</mn><msup><mi>t</mi><mn>7</mn></msup><mo>+</mo><mn>1022976</mn><msup><mi>t</mi><mn>6</mn></msup><mo>−</mo><mn>2745456</mn><msup><mi>t</mi><mn>5</mn></msup><mo>+</mo><mn>2218730</mn><msup><mi>t</mi><mn>4</mn></msup><mo>+</mo><mn>32206304</mn><msup><mi>t</mi><mn>3</mn></msup><mo>−</mo><mn>19148615</mn><msup><mi>t</mi><mn>2</mn></msup><mo>+</mo><mn>3156103</mn><mi>t</mi><mo>−</mo><mn>86233</mn></mrow></math>"
  },
- "status": "numerical",
+ "status": "proven",
  "credit": {
   "found": {
    "name": "David Cantrell",
    "date": "July 2006"
   },
-  "proved": null,
+  "proved": {
+   "name": "Ethan Hendren",
+   "date": "November 2026"
+  },
   "trivial": false,
   "numerical": {
    "name": "Nathan Sudermann-Merx",
@@ -67,9 +70,9 @@
   }
  },
  "proof": {
-  "id": "sudermann-merx-2026-triangle",
-  "title": "N. Sudermann-Merx, Heilbronn's Problem in the Unit Triangle: Computational Optimality Certificates for n ≤ 8, arXiv:2607.15021, to appear in Operations Research Proceedings 2026",
-  "url": "https://arxiv.org/abs/2607.15021"
+  "id": "hendren-2026-triangle8",
+  "title": "E. Hendren, A computer-assisted proof of optimality for Heilbronn's problem with eight points in a triangle, Zenodo (November 2026)",
+  "url": "https://doi.org/10.5281/zenodo.24338251"
  },
  "coordinates_source": {
   "kind": "exact-construction",
@@ -98,11 +101,16 @@
   {
    "date": "2026-11-14",
    "text": "computer-assisted proof of optimality posted by Ethan Hendren: an exact-arithmetic branch and bound over the whole configuration space (LP bounds verified in exact integer arithmetic, neighbourhood of the optimum closed by an interval-arithmetic certificate) shows that the value is twice the unique real root of the septic, with the known configuration unique up to symmetry; AI-assisted and not yet independently verified, so the entry stays numerically optimal"
+  },
+  {
+   "date": "2026-11-18",
+   "text": "optimality proof with a replayable certificate trace (Ethan Hendren): a second, independent proof by the cell-graph method records every split and closure, 2,950 shards and 4,379,630 closures, replayed in exact arithmetic by a separate checker that does not use the search code (it also re-checks the local certificate: Newton-Kantorovich existence and the first-order basin); trace, checker and release receipt archived on Zenodo; AI-assisted, and so far replayed only by its author"
   }
  ],
  "references": [
   "sudermann-merx-2026-triangle",
   "hendren-2026-triangle8",
+  "hendren-2026-triangle8-trace",
   "chen-zeng-zhou-2014"
  ],
  "verify": {

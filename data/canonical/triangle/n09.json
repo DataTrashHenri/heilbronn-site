@@ -51,16 +51,23 @@
   "exact_decimal": "0.0548469387755102040816326530612244897959183673",
   "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mn>43</mn></mrow><mrow><mn>784</mn></mrow></mfrac></math>"
  },
- "status": "record",
+ "status": "proven",
  "credit": {
   "found": {
    "name": "David Cantrell",
    "date": "July 2006"
   },
-  "proved": null,
+  "proved": {
+   "name": "Ethan Hendren",
+   "date": "November 2026"
+  },
   "trivial": false
  },
- "proof": null,
+ "proof": {
+  "id": "hendren-2026-triangle9",
+  "title": "E. Hendren, A computer-assisted proof of optimality for Heilbronn's problem with nine points in a triangle, Zenodo (November 2026)",
+  "url": "https://doi.org/10.5281/zenodo.24331376"
+ },
  "coordinates_source": {
   "kind": "exact-construction",
   "ref": "data/sources/exact/constructions.py",
@@ -84,10 +91,15 @@
   {
    "date": "2026-11-15",
    "text": "computer-assisted proof of optimality posted by Ethan Hendren: a minimum-enclosing-triangle normalization to eight contact families, an exact cell-graph search and exactly checked LP certificates, with a certified local basin, show the value 43/784 with the known configuration unique up to symmetry; AI-assisted and not yet independently verified"
+  },
+  {
+   "date": "2026-11-18",
+   "text": "optimality proof completed with a replayable certificate trace (Ethan Hendren): every split and closure of the exact search, 3,854 shards and 69,194,387 closures, is replayed in exact arithmetic by a separate checker that does not use the search code; the trace, checker and strict eight-family release receipt are archived on Zenodo; AI-assisted, and so far replayed only by its author"
   }
  ],
  "references": [
-  "hendren-2026-triangle9"
+  "hendren-2026-triangle9",
+  "hendren-2026-triangle9-trace"
  ],
  "verify": {
   "n": 9,
