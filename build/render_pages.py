@@ -55,8 +55,8 @@ META = {
             "(0,0), (1,0), (0,1) and displayed as an equilateral figure. Note that literature "
             "using the unnormalized right triangle with vertices (0,0),(1,0),(0,1) has area 1/2, "
             "and therefore reports values exactly half of those shown here. Optimality is proven "
-            "for n ≤ 7. For n = 8 a global solver has certified optimality within its "
-            "floating-point tolerances, which is strong numerical evidence but not a proof.</p>"),
+            "for n ≤ 9; the proofs for n = 8 and 9 (Hendren, 2026) are AI-assisted computer "
+            "searches whose certificate traces have so far been replayed only by their author.</p>"),
     },
     "convex": {
         "title": "The Heilbronn Problem for Convex Regions",
