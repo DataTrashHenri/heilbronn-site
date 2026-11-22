@@ -7,11 +7,12 @@ Floats are fine for congruence/symmetry (coordinates are polished to
 as the verifiers.
 """
 
+import bisect
 import itertools
 import math
 from fractions import Fraction
 
-from .vendor.verify_exact import TIE_FACTOR, triangle_area, convex_hull
+from .vendor.verify_exact import convex_hull, scan_triangles
 
 # Friedman's GIF palette, reused so our figures rhyme with the originals.
 PALETTE = ["#e02020", "#2020e0", "#00a020", "#d4b400", "#f07800",
@@ -23,15 +24,7 @@ SQ3 = math.sqrt(3.0)
 def minimal_triangles(points_frac):
     """All triples within the exact tie tolerance of the minimum area.
     Returns (min_area: Fraction, ties: list[(i, j, k)])."""
-    areas = {}
-    min_area = None
-    for t in itertools.combinations(range(len(points_frac)), 3):
-        a = triangle_area(*(points_frac[i] for i in t))
-        areas[t] = a
-        if min_area is None or a < min_area:
-            min_area = a
-    threshold = min_area * TIE_FACTOR
-    ties = [t for t, a in areas.items() if a <= threshold]
+    min_area, _, ties, _ = scan_triangles(points_frac)
     return min_area, ties
 
 
@@ -77,16 +70,39 @@ def congruence_classes(points, ties):
 TOL = 1e-6
 
 
-def _maps_set_to_itself(points, fn, tol=TOL):
+def _grid(points, tol):
+    """Bucket point indices by (floor(x / tol), floor(y / tol)). A point
+    within tol (per coordinate) of a query lies within one cell of the
+    query's cell; lookups scan two cells each way, so rounding in the
+    division can't hide a match."""
+    grid = {}
+    for idx, (px, py) in enumerate(points):
+        grid.setdefault((math.floor(px / tol), math.floor(py / tol)), []).append(idx)
+    return grid
+
+
+def _maps_set_to_itself(points, fn, tol=TOL, grid=None):
+    """True if fn permutes the points within tol. Each image is matched to
+    the lowest-index unused point within tol (per coordinate), exactly the
+    point a linear scan in index order would take; the grid only narrows
+    which points are looked at."""
+    if grid is None:
+        grid = _grid(points, tol)
     used = [False] * len(points)
     for (x, y) in points:
         tx, ty = fn(x, y)
-        for idx, (px, py) in enumerate(points):
-            if not used[idx] and abs(px - tx) <= tol and abs(py - ty) <= tol:
-                used[idx] = True
-                break
-        else:
+        gx, gy = math.floor(tx / tol), math.floor(ty / tol)
+        match = None
+        for cx in range(gx - 2, gx + 3):
+            for cy in range(gy - 2, gy + 3):
+                for idx in grid.get((cx, cy), ()):
+                    if (not used[idx] and (match is None or idx < match)
+                            and abs(points[idx][0] - tx) <= tol
+                            and abs(points[idx][1] - ty) <= tol):
+                        match = idx
+        if match is None:
             return False
+        used[match] = True
     return True
 
 
@@ -107,19 +123,28 @@ def _detect(points, center, rot_orders, mirror_angles, tol=TOL):
     """Try rotations by 2π/m for m in rot_orders and reflections at the given
     axis angles (through center). Returns (rot_order, mirror_axes)."""
     cx, cy = center
+    grid = _grid(points, tol)
     rot_order = 1
     for m in sorted(set(rot_orders), reverse=True):
-        if m > 1 and _maps_set_to_itself(points, _rot(cx, cy, 2 * math.pi / m), tol):
+        if m > 1 and _maps_set_to_itself(points, _rot(cx, cy, 2 * math.pi / m), tol, grid):
             rot_order = m
             break
     axes = []
-    seen = []
+    seen = []  # sorted; an angle within 1e-9 of a seen one (or of one ± π) is skipped
+
+    def near_seen(t):
+        # If any seen angle is within 1e-9 of t, the nearest one on that
+        # side of t is too, so checking the two neighbours is exact.
+        i = bisect.bisect_left(seen, t)
+        return any(0 <= j < len(seen) and abs(t - seen[j]) < 1e-9 for j in (i - 1, i))
+
     for a in mirror_angles:
         a = a % math.pi
-        if any(abs(a - b) < 1e-9 or abs(abs(a - b) - math.pi) < 1e-9 for b in seen):
+        if near_seen(a) or any(abs(abs(a - b) - math.pi) < 1e-9
+                               for b in seen[:1] + seen[-1:]):
             continue
-        seen.append(a)
-        if _maps_set_to_itself(points, _mirror(cx, cy, a), tol):
+        bisect.insort(seen, a)
+        if _maps_set_to_itself(points, _mirror(cx, cy, a), tol, grid):
             axes.append(a)
     return rot_order, axes
 
