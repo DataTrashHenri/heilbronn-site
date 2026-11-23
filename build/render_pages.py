@@ -546,12 +546,13 @@ Continuous integration computes all triangle areas in exact rational arithmetic 
 an automated verification report on the PR. Recent record submissions include contributions
 from Nathan Sudermann-Merx, Rhys Chappell, and Chouaieb Nemri.</li>
 <li><strong>This site's own search campaigns</strong> — records for
-n = 17…36 across the variants, found with the toolkit under
+n = 17…36 across the variants and a number of convex and triangle entries
+between n = 37 and 71, found with the toolkit under
 <code>search/</code> and submitted through the same lane as everyone else's.</li>
 <li><a href="https://github.com/NERD-NEH007/heilbronn-discovery-lab">NERD-NEH007/heilbronn-discovery-lab</a>
-— Ethan Hendren's search campaign: the first entries beyond n = 36 (square
-n = 37…99, triangle n = 37…100, convex n = 40), several of them since improved by
-Nathan Sudermann-Merx and others.</li>
+— Ethan Hendren's search campaign: the first entries beyond n = 36 in all three
+variants, many of them since improved by Nathan Sudermann-Merx and others, and
+the proofs for triangle n = 8, 9 and 10.</li>
 <li><a href="https://github.com/cnemri/heilbronn-alphaevolve">cnemri/heilbronn-alphaevolve</a>
 — Chouaieb Nemri's AlphaEvolve-evolved search program (square n = 17, 21, 22
 records); the evolved program's architecture also powers several of the later
@@ -629,6 +630,29 @@ are tracked on the <a href="/heilbronn/leaderboard/">leaderboard</a>.</p>
 
 
 
+TREND_BASE = (20, 36)
+TREND_BINS = ((37, 60), (61, 80), (81, 100))
+
+
+def trend_gaps(docs):
+    """Mean n²·A(n) over each bin of n > 36, relative to the mean over
+    TREND_BASE, per variant: {variant: [(lo, hi, percent), ...]}."""
+    def mean(v, lo, hi):
+        xs = [n * n * float(docs[(v, n)]["value"]["decimal"])
+              for n in range(lo, hi + 1) if (v, n) in docs]
+        return sum(xs) / len(xs) if xs else None
+    out = {}
+    for v in VARIANTS:
+        base = mean(v, *TREND_BASE)
+        rows = []
+        for lo, hi in TREND_BINS:
+            m = mean(v, lo, hi)
+            if base and m is not None:
+                rows.append((lo, hi, 100 * (m / base - 1)))
+        out[v] = rows
+    return out
+
+
 def render_extra(env, assets, values_name):
     """Pages that need the values.json asset name (written by downloads)."""
     docs = load_docs()
@@ -640,7 +664,7 @@ def render_extra(env, assets, values_name):
     (DIST / "trends" / "index.html").write_text(
         env.get_template("trends.html").render(
             dict(common, section="trends", page_path=f"{BASE}/trends/",
-                 charts=build_charts(docs))))
+                 charts=build_charts(docs), trend_gaps=trend_gaps(docs))))
     bib = json.loads((ROOT / "data" / "curated" / "references.json").read_text())["bib"]
     (DIST / "methods").mkdir(parents=True, exist_ok=True)
     (DIST / "methods" / "index.html").write_text(
