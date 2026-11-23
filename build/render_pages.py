@@ -55,7 +55,7 @@ META = {
             "(0,0), (1,0), (0,1) and displayed as an equilateral figure. Note that literature "
             "using the unnormalized right triangle with vertices (0,0),(1,0),(0,1) has area 1/2, "
             "and therefore reports values exactly half of those shown here. Optimality is proven "
-            "for n ≤ 9; the proofs for n = 8 and 9 (Hendren, 2026) are AI-assisted computer "
+            "for n ≤ 10; the proofs for n = 8, 9 and 10 (Hendren, 2026) are AI-assisted computer "
             "searches whose certificate traces have so far been replayed only by their author.</p>"),
     },
     "convex": {

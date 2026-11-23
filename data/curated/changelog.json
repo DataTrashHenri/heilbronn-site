@@ -356,5 +356,11 @@
    "date": "2026-11-13",
    "text": "computer-assisted proof of optimality posted by Ethan Hendren: an exact-arithmetic branch and bound (LP bounds verified in exact integer arithmetic, neighbourhood of the optimum closed by an interval-arithmetic certificate) shows H(9) = (9√65 − 55)/320 with the Comellas–Yebra configuration unique up to symmetry; AI-assisted and not yet independently verified, so the entry stays numerically optimal"
   }
+ ],
+ "triangle/10": [
+  {
+   "date": "2026-11-23",
+   "text": "computer-assisted proof of optimality by Ethan Hendren: the known configuration (David Cantrell, June 2007) is optimal and unique up to symmetry, with value 0.0433767406780570017601...; an affine normalization to eight contact families, an exact cell-graph search and exactly checked certificates, with a certified second-order basin around the optimum; every split and closure, 16,166 shards and 92,003,233 closures, is replayed in exact arithmetic by a separate checker that does not use the search code; trace, checker and release receipt archived on Zenodo; AI-assisted, and so far replayed only by its author"
+  }
  ]
 }
