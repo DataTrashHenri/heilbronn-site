@@ -128,7 +128,7 @@ function verify(variantSel, rawPts) {
   const U = 10n ** BigInt(K); // the scaled "1"
   const n = pts.length;
   if (n < 3) throw new Error(`need at least 3 points, got ${n}`);
-  if (n > 80) throw new Error(`n = ${n} is above this page's cap of 80`);
+  if (n > 100) throw new Error(`n = ${n} is above this page's cap of 100`);
 
   // Feasibility. maxViolation tracks the worst overshoot as a relative
   // magnitude, so the UI can distinguish "outside by 1e-16" (a boundary

@@ -22,9 +22,11 @@ Meanwhile, the sharpest known upper bound, Δ<sub>n</sub> ≤ n<sup>−7/6 + o(1
 and polynomial decay. Within the range tabulated here (n ≤ {{ n_max.square }}), the normalized curve
 hovers in a stable band, demonstrating that asymptotic regimes remain distant at small n.
 Entries beyond n = 36 were all first found in November 2026 and have had far less search than
-the smaller sizes. Their n² · A(n) sits below the trend of n ≤ 36: for the square by about 4%
-near n = 90, for the triangle by about 12% from n = 37 on. They are most likely further from
-optimal than the smaller entries.</figcaption></figure>
+the smaller sizes. Their mean n² · A(n), relative to the mean over n = 20…36, is
+{% for v, rows in trend_gaps.items() %}{{ v }}
+{% for lo, hi, pct in rows %}{{ ("%+.1f"|format(pct)).replace("-", "−") }}% (n = {{ lo }}…{{ hi }}){{ ", " if not loop.last }}{% endfor %}{{ "; " if not loop.last else "." }}
+{% endfor %}Where a range sits well below the others, its entries are most likely further from
+optimal than the smaller ones.</figcaption></figure>
 
 <figure class="chart">{{ charts["ties"] | safe }}
 <figcaption>The number of triangles that simultaneously achieve the minimal area (the critical set).
