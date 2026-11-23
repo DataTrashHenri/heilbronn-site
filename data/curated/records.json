@@ -553,7 +553,10 @@
    "name": "David Cantrell",
    "date": "June 2007"
   },
-  "proved": null,
+  "proved": {
+   "name": "Ethan Hendren",
+   "date": "November 2026"
+  },
   "trivial": false,
   "symmetry": "Not symmetric",
   "notes": []
