@@ -192,6 +192,18 @@
    "id": "10.5281/zenodo.24337873",
    "url": "https://doi.org/10.5281/zenodo.24337873",
    "title": "E. Hendren, Certificate trace and checker for the computer-assisted proof of Heilbronn's problem for eight points in a triangle, Zenodo dataset (November 2026)"
+  },
+  "hendren-2026-triangle10": {
+   "kind": "doi",
+   "id": "10.5281/zenodo.24426068",
+   "url": "https://doi.org/10.5281/zenodo.24426068",
+   "title": "E. Hendren, A computer-assisted proof of optimality for Heilbronn's problem with ten points in a triangle, Zenodo (November 2026)"
+  },
+  "hendren-2026-triangle10-trace": {
+   "kind": "doi",
+   "id": "10.5281/zenodo.24426026",
+   "url": "https://doi.org/10.5281/zenodo.24426026",
+   "title": "E. Hendren, Certificate trace and checker for the computer-assisted proof of Heilbronn's problem for ten points in a triangle, Zenodo dataset (November 2026)"
   }
  },
  "by_config": {
@@ -281,6 +293,10 @@
   "triangle/9": [
    "hendren-2026-triangle9",
    "hendren-2026-triangle9-trace"
+  ],
+  "triangle/10": [
+   "hendren-2026-triangle10",
+   "hendren-2026-triangle10-trace"
   ]
  },
  "proofs": {
@@ -295,7 +311,8 @@
   "convex/5": "palomar-2026-heilbronn-convex-3-8",
   "convex/8": "palomar-2026-heilbronn-convex-3-8",
   "triangle/9": "hendren-2026-triangle9",
-  "triangle/8": "hendren-2026-triangle8"
+  "triangle/8": "hendren-2026-triangle8",
+  "triangle/10": "hendren-2026-triangle10"
  },
  "numerical": {
   "square/9": "sudermann-merx-2026-square",
