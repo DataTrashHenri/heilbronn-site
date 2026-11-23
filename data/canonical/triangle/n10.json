@@ -52,16 +52,23 @@
   "exact_sympy": null,
   "minimal_polynomial": null
  },
- "status": "record",
+ "status": "proven",
  "credit": {
   "found": {
    "name": "David Cantrell",
    "date": "June 2007"
   },
-  "proved": null,
+  "proved": {
+   "name": "Ethan Hendren",
+   "date": "November 2026"
+  },
   "trivial": false
  },
- "proof": null,
+ "proof": {
+  "id": "hendren-2026-triangle10",
+  "title": "E. Hendren, A computer-assisted proof of optimality for Heilbronn's problem with ten points in a triangle, Zenodo (November 2026)",
+  "url": "https://doi.org/10.5281/zenodo.24426068"
+ },
  "coordinates_source": {
   "kind": "external",
   "ref": "David Cantrell's original coordinates (Mathematica list), received September 2026",
@@ -77,8 +84,16 @@
   "reported": "Not symmetric"
  },
  "notes": [],
- "changelog": [],
- "references": [],
+ "changelog": [
+  {
+   "date": "2026-11-23",
+   "text": "computer-assisted proof of optimality by Ethan Hendren: the known configuration (David Cantrell, June 2007) is optimal and unique up to symmetry, with value 0.0433767406780570017601...; an affine normalization to eight contact families, an exact cell-graph search and exactly checked certificates, with a certified second-order basin around the optimum; every split and closure, 16,166 shards and 92,003,233 closures, is replayed in exact arithmetic by a separate checker that does not use the search code; trace, checker and release receipt archived on Zenodo; AI-assisted, and so far replayed only by its author"
+  }
+ ],
+ "references": [
+  "hendren-2026-triangle10",
+  "hendren-2026-triangle10-trace"
+ ],
  "verify": {
   "n": 10,
   "triples_checked": 120,
