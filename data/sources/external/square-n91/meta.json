@@ -1,5 +1,5 @@
 {
- "ref": "Arul Saxena search, November 2026: seeded by deleting one point from the n+1 configuration, then trust-region SLP polish and ruin-and-recreate basin hopping",
- "credit": "Arul Saxena, November 2026",
- "note": "Seeded from the n+1 configuration by deleting one point, then refined by ruin-and-recreate basin hopping; coordinates are the SLP-polished double-precision optimum, truncated toward zero."
+  "ref": "Configuration found by Astra 6.2 Max, November 2026",
+  "credit": "Henri Roeck, November 2026",
+  "note": "Candidate square configuration found using Astra 6.2 Max; coordinates and minimum triangle area independently checked by exhaustive triangle enumeration."
 }
